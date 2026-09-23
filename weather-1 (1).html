@@ -157,7 +157,7 @@
   </main>
 
   <script>
-    const apiKey = 'fe451934ea2036046dba4d4487880768';
+    // Weather data is provided by Open-Meteo; no API key is required.
     const unitToggle = document.getElementById("unitToggle");
     let unit = unitToggle.value;
 
@@ -184,7 +184,7 @@
         return;
       }
       debounceTimeout = setTimeout(() => {
-        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`)
+        fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`)
           .then(res => res.json())
           .then(data => {
             suggestionsList.innerHTML = "";
@@ -238,7 +238,7 @@
     };
 
     function fetchCityFromCoords(lat, lon) {
-      return fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`)
+      return fetch(`https://geocoding-api.open-meteo.com/v1/reverse?latitude=${lat}&longitude=${lon}&count=1&language=en&format=json`)
         .then(res => res.json())
         .then(data => data[0]?.name || "Your Location");
     }
