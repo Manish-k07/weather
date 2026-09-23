@@ -1,11 +1,15 @@
 # Weather Dashboard
 
-A static weather dashboard with city search, geolocation, temperature-unit switching, current conditions, and a five-day forecast.
+Canonical static weather project using Open-Meteo.
 
-## Run
+## Features
+- City search and geocoding
+- Browser geolocation
+- Celsius/Fahrenheit temperature switching
+- Current conditions and five-day forecast
+- Responsive UI and accessible status messaging
+- No weather API key required
 
-Open `weather.html` in a browser or serve the repository with any static web server.
+Open `weather.html` directly or serve this repository with any static web server.
 
-## Security
-
-No weather API key is committed. Weather data is fetched from Open-Meteo, which does not require an API key for this client-side demo.
+The `ourweather.com` repository is retained as a compatibility copy so existing links continue to work.
